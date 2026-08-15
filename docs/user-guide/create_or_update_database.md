@@ -24,6 +24,7 @@
 ONE_C_PLATFORM_VERSION=8.3.27.1916
 ONE_C_PLATFORM_BITNESS=x64
 SHOW_COMMAND_WINDOWS=true
+PLAY_COMPLETION_SOUND=false
 ONE_C_BASES_PATH=D:\db
 ONE_C_IBASES_FOLDER=DEV
 ONE_C_INFOBASE_USER=Administrator
@@ -37,6 +38,8 @@ WORKTREE_PATH_CFE_TEST=src\tests
 `ONE_C_BASES_PATH` используется только при отсутствии параметра `--db-path`.
 
 `SHOW_COMMAND_WINDOWS=false` скрывает окна внешних команд; при `true` окна отображаются.
+
+`PLAY_COMPLETION_SOUND=true` включает разные системные звуки Windows для успешного завершения и ошибки.
 
 `ONE_C_INFOBASE_USER` и `ONE_C_INFOBASE_PASSWORD` используются только при обновлении существующей базы. Для новой базы параметры авторизации не передаются. Пароль может быть пустым.
 

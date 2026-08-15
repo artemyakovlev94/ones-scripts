@@ -23,6 +23,7 @@
 - [`src/lib/ibases.os`](src/lib/ibases.md) — управление папками и файловыми базами в `ibases.v8i`.
 - [`src/lib/process.os`](src/lib/process.md) — синхронный запуск внешних команд.
 - [`src/lib/logger.os`](src/lib/logger.md) — вывод сообщений с датой и временем.
+- [`src/lib/completion_sound.os`](src/lib/completion_sound.md) — звуковое уведомление Windows о результате скрипта.
 - [`src/lib/one_c_database.os`](src/lib/one_c_database.md) — операции платформы с файловой базой 1С.
 - [`src/lib/one_c_extensions.os`](src/lib/one_c_extensions.md) — сборка, загрузка и настройка расширений 1С.
 

@@ -12,6 +12,7 @@ BSP_CFE_ARCHIVE_URL=https://example.com/archive.zip
 ONE_C_PLATFORM_VERSION=8.3.27.1916
 ONE_C_PLATFORM_BITNESS=x64
 SHOW_COMMAND_WINDOWS=true
+PLAY_COMPLETION_SOUND=false
 ONE_C_BASES_PATH=D:\db
 ONE_C_BASES_TEMPLATE=D:\db\templatedb
 ONE_C_IBASES_FOLDER=DEV
@@ -31,6 +32,7 @@ WORKTREE_PATH_CFE_TEST=src\tests
 | `ONE_C_PLATFORM_VERSION` | — | ✓ | ✓ | ✓ |
 | `ONE_C_PLATFORM_BITNESS` | — | ✓ | ✓ | ✓ |
 | `SHOW_COMMAND_WINDOWS` | — | ✓ | ✓ | ✓ |
+| `PLAY_COMPLETION_SOUND` | ✓ | ✓ | ✓ | ✓ |
 | `ONE_C_BASES_PATH` | — | условно | условно | условно |
 | `ONE_C_BASES_TEMPLATE` | — | — | ✓ | — |
 | `ONE_C_IBASES_FOLDER` | — | ✓ | ✓ | — |
@@ -74,6 +76,15 @@ ONE_C_PLATFORM_VERSION=8.3.27.1916
 - `false` или `0` — запускать команды скрыто.
 
 Если переменная отсутствует или оставлена пустой, используется `true`.
+
+### `PLAY_COMPLETION_SOUND`
+
+Управляет звуковым уведомлением после завершения любого пользовательского скрипта:
+
+- `true` или `1` — воспроизводить `Asterisk` при успехе и `Hand` при ошибке;
+- `false` или `0` — не воспроизводить звук.
+
+Значение по умолчанию — `false`. После звука ошибки скрипт всё равно завершается с ошибочным кодом. Используются стандартные системные звуки Windows, поэтому внешние модули и регистрация приложения в центре уведомлений не требуются.
 
 ### `ONE_C_BASES_PATH`
 

@@ -15,6 +15,7 @@ oscript scripts\download_cfe_bsp.os
 Значение читается из `config/.env` до подключения workflow.
 
 - `BSP_CFE_ARCHIVE_URL` — URL ZIP-архива BSP.
+- `PLAY_COMPLETION_SOUND` — включает звуковое уведомление об успехе или ошибке.
 
 ## Входные параметры
 

@@ -27,9 +27,12 @@
 
 ```dotenv
 BSP_CFE_ARCHIVE_URL=https://example.com/archive.zip
+PLAY_COMPLETION_SOUND=false
 ```
 
 Вместо примера укажите прямой URL ZIP-архива, содержащего файл `.cfe`. Название переменной и безопасный пример также приведены в `config/.env.example`.
+
+`PLAY_COMPLETION_SOUND=true` включает разные системные звуки Windows для успешного завершения и ошибки.
 
 ## Как запустить
 
