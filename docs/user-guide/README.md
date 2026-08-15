@@ -31,3 +31,4 @@
 | `scripts/create_or_update_database_from_template.os` | Создать базу worktree копированием существующей базы и обновить её | [Создание или обновление базы из существующей базы](create_or_update_database_from_template.md) |
 | `scripts/load_test_extension.os` | Загрузить тестовое расширение в существующую базу | [Загрузка тестового расширения](load_test_extension.md) |
 | `scripts/copy_database_to_template.os` | Скопировать существующую базу в каталог шаблона | [Копирование базы в шаблон](copy_database_to_template.md) |
+| `scripts/delete_database_directory.os` | Безвозвратно удалить каталог файловой базы | [Удаление каталога базы данных](delete_database_directory.md) |

@@ -32,6 +32,7 @@
 - [`src/workflows/download_cfe_bsp.os`](src/workflows/download_cfe_bsp.md) — скачивание и сохранение CFE BSP.
 - [`src/workflows/create_or_update_database.os`](src/workflows/create_or_update_database.md) — создание или обновление файловой базы worktree.
 - [`src/workflows/copy_database_to_template.os`](src/workflows/copy_database_to_template.md) — копирование существующей файловой базы в шаблон.
+- [`src/workflows/delete_database_directory.os`](src/workflows/delete_database_directory.md) — безопасная проверка и удаление каталога файловой базы.
 
 ## Пользовательские скрипты
 
@@ -40,3 +41,4 @@
 - [`scripts/create_or_update_database_from_template.os`](scripts/create_or_update_database_from_template.md) — создание или обновление базы worktree из файла существующей базы.
 - [`scripts/load_test_extension.os`](scripts/load_test_extension.md) — сборка и загрузка тестового расширения в существующую базу.
 - [`scripts/copy_database_to_template.os`](scripts/copy_database_to_template.md) — сохранение существующей файловой базы как шаблона.
+- [`scripts/delete_database_directory.os`](scripts/delete_database_directory.md) — безвозвратное удаление каталога файловой базы.
