@@ -30,3 +30,4 @@
 | `scripts/create_or_update_database.os` | Создать или обновить базу worktree и запустить клиент | [Создание или обновление базы данных 1С](create_or_update_database.md) |
 | `scripts/create_or_update_database_from_template.os` | Создать базу worktree копированием существующей базы и обновить её | [Создание или обновление базы из существующей базы](create_or_update_database_from_template.md) |
 | `scripts/load_test_extension.os` | Загрузить тестовое расширение в существующую базу | [Загрузка тестового расширения](load_test_extension.md) |
+| `scripts/copy_database_to_template.os` | Скопировать существующую базу в каталог шаблона | [Копирование базы в шаблон](copy_database_to_template.md) |

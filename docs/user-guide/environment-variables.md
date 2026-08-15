@@ -26,20 +26,20 @@ WORKTREE_PATH_CFE_TEST=src\tests
 
 ## Применимость
 
-| Переменная | BSP | Создание/обновление базы | База из шаблона | Тестовое расширение |
-|---|:---:|:---:|:---:|:---:|
-| `BSP_CFE_ARCHIVE_URL` | ✓ | — | — | — |
-| `ONE_C_PLATFORM_VERSION` | — | ✓ | ✓ | ✓ |
-| `ONE_C_PLATFORM_BITNESS` | — | ✓ | ✓ | ✓ |
-| `SHOW_COMMAND_WINDOWS` | — | ✓ | ✓ | ✓ |
-| `PLAY_COMPLETION_SOUND` | ✓ | ✓ | ✓ | ✓ |
-| `ONE_C_BASES_PATH` | — | условно | условно | условно |
-| `ONE_C_BASES_TEMPLATE` | — | — | ✓ | — |
-| `ONE_C_IBASES_FOLDER` | — | ✓ | ✓ | — |
-| `ONE_C_INFOBASE_USER` | — | для существующей базы | ✓ | ✓ |
-| `ONE_C_INFOBASE_PASSWORD` | — | для существующей базы | при необходимости | при необходимости |
-| `WORKTREE_PATH_CF` | — | ✓ | ✓ | — |
-| `WORKTREE_PATH_CFE_TEST` | — | ✓ | ✓ | ✓ |
+| Переменная | BSP | Создание/обновление базы | База из шаблона | Тестовое расширение | Копирование в шаблон |
+|---|:---:|:---:|:---:|:---:|:---:|
+| `BSP_CFE_ARCHIVE_URL` | ✓ | — | — | — | — |
+| `ONE_C_PLATFORM_VERSION` | — | ✓ | ✓ | ✓ | — |
+| `ONE_C_PLATFORM_BITNESS` | — | ✓ | ✓ | ✓ | — |
+| `SHOW_COMMAND_WINDOWS` | — | ✓ | ✓ | ✓ | — |
+| `PLAY_COMPLETION_SOUND` | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `ONE_C_BASES_PATH` | — | условно | условно | условно | — |
+| `ONE_C_BASES_TEMPLATE` | — | — | ✓ | — | ✓ |
+| `ONE_C_IBASES_FOLDER` | — | ✓ | ✓ | — | — |
+| `ONE_C_INFOBASE_USER` | — | для существующей базы | ✓ | ✓ | — |
+| `ONE_C_INFOBASE_PASSWORD` | — | для существующей базы | при необходимости | при необходимости | — |
+| `WORKTREE_PATH_CF` | — | ✓ | ✓ | — | — |
+| `WORKTREE_PATH_CFE_TEST` | — | ✓ | ✓ | ✓ | — |
 
 «Условно» означает, что переменная требуется только при отсутствии входного параметра `--db-path`.
 
@@ -98,7 +98,7 @@ ONE_C_BASES_PATH\<worktree-name>
 
 ### `ONE_C_BASES_TEMPLATE`
 
-Абсолютный путь к каталогу шаблонной файловой базы для `create_or_update_database_from_template.os`. В каталоге обязательно должен находиться файл:
+Абсолютный путь к каталогу шаблонной файловой базы. `create_or_update_database_from_template.os` читает из него файл, а `copy_database_to_template.os` записывает в него копию исходной базы:
 
 ```text
 <ONE_C_BASES_TEMPLATE>\1Cv8.1CD
