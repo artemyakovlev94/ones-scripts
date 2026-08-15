@@ -21,6 +21,8 @@
 - [`src/lib/arguments.os`](src/lib/arguments.md) — разбор стандартных именованных параметров скриптов.
 - [`src/lib/ibases.os`](src/lib/ibases.md) — управление папками и файловыми базами в `ibases.v8i`.
 - [`src/lib/process.os`](src/lib/process.md) — синхронный запуск внешних команд.
+- [`src/lib/one_c_database.os`](src/lib/one_c_database.md) — операции платформы с файловой базой 1С.
+- [`src/lib/one_c_extensions.os`](src/lib/one_c_extensions.md) — сборка, загрузка и настройка расширений 1С.
 
 ## Workflows
 
@@ -32,3 +34,4 @@
 - [`scripts/download_cfe_bsp.os`](scripts/download_cfe_bsp.md) — пользовательская точка входа для загрузки CFE BSP.
 - [`scripts/create_or_update_database.os`](scripts/create_or_update_database.md) — пользовательская точка входа для создания, обновления и запуска базы worktree.
 - [`scripts/create_or_update_database_from_template.os`](scripts/create_or_update_database_from_template.md) — создание или обновление базы worktree из файла существующей базы.
+- [`scripts/load_test_extension.os`](scripts/load_test_extension.md) — сборка и загрузка тестового расширения в существующую базу.
