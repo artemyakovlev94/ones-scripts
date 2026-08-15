@@ -21,3 +21,4 @@
 | Скрипт | Назначение | Инструкция |
 |---|---|---|
 | `scripts/download_cfe_bsp.os` | Скачать расширение БСП из ZIP-архива | [Скачивание CFE БСП](download_cfe_bsp.md) |
+| `scripts/create_or_update_database.os` | Создать или обновить базу worktree и запустить клиент | [Создание или обновление базы данных 1С](create_or_update_database.md) |
