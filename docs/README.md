@@ -5,6 +5,7 @@
 ## Пользовательские инструкции
 
 - [Руководство пользователя](user-guide/README.md) — подготовка к запуску и оглавление инструкций для всех скриптов из `scripts/`.
+- [Пользовательская инструкция по переменным окружения](user-guide/environment-variables.md).
 
 ## Общие соглашения
 
@@ -21,6 +22,7 @@
 - [`src/lib/arguments.os`](src/lib/arguments.md) — разбор стандартных именованных параметров скриптов.
 - [`src/lib/ibases.os`](src/lib/ibases.md) — управление папками и файловыми базами в `ibases.v8i`.
 - [`src/lib/process.os`](src/lib/process.md) — синхронный запуск внешних команд.
+- [`src/lib/logger.os`](src/lib/logger.md) — вывод сообщений с датой и временем.
 - [`src/lib/one_c_database.os`](src/lib/one_c_database.md) — операции платформы с файловой базой 1С.
 - [`src/lib/one_c_extensions.os`](src/lib/one_c_extensions.md) — сборка, загрузка и настройка расширений 1С.
 

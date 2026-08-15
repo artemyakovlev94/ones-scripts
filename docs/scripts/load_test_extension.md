@@ -14,6 +14,7 @@
 
 - `ONE_C_PLATFORM_VERSION`;
 - `ONE_C_PLATFORM_BITNESS`;
+- `SHOW_COMMAND_WINDOWS`;
 - `ONE_C_BASES_PATH` — требуется, если не передан `--db-path`;
 - `ONE_C_INFOBASE_USER`;
 - `ONE_C_INFOBASE_PASSWORD`;

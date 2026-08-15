@@ -23,6 +23,7 @@
 ```dotenv
 ONE_C_PLATFORM_VERSION=8.3.27.1916
 ONE_C_PLATFORM_BITNESS=x64
+SHOW_COMMAND_WINDOWS=true
 ONE_C_BASES_PATH=D:\db
 ONE_C_INFOBASE_USER=Administrator
 ONE_C_INFOBASE_PASSWORD=
@@ -30,6 +31,8 @@ WORKTREE_PATH_CFE_TEST=src\tests
 ```
 
 `WORKTREE_PATH_CFE_TEST` задаётся относительно `--worktree-path`. `ONE_C_BASES_PATH` используется только при отсутствии `--db-path`.
+
+`SHOW_COMMAND_WINDOWS=false` скрывает окна внешних команд; при `true` окна отображаются.
 
 ## Как запустить
 

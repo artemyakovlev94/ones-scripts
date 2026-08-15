@@ -57,6 +57,7 @@
 ПараметрыСреды.Вставить("ONE_C_BASES_PATH", ПолучитьПеременнуюСреды("ONE_C_BASES_PATH"));
 ПараметрыСреды.Вставить("ONE_C_PLATFORM_VERSION", ПолучитьПеременнуюСреды("ONE_C_PLATFORM_VERSION"));
 ПараметрыСреды.Вставить("ONE_C_PLATFORM_BITNESS", ПолучитьПеременнуюСреды("ONE_C_PLATFORM_BITNESS"));
+ПараметрыСреды.Вставить("SHOW_COMMAND_WINDOWS", ПолучитьПеременнуюСреды("SHOW_COMMAND_WINDOWS"));
 ПараметрыСреды.Вставить("ONE_C_IBASES_FOLDER", ПолучитьПеременнуюСреды("ONE_C_IBASES_FOLDER"));
 ПараметрыСреды.Вставить("ONE_C_INFOBASE_USER", ПолучитьПеременнуюСреды("ONE_C_INFOBASE_USER"));
 ПараметрыСреды.Вставить("ONE_C_INFOBASE_PASSWORD", ПолучитьПеременнуюСреды("ONE_C_INFOBASE_PASSWORD"));
