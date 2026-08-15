@@ -2,6 +2,12 @@
 
 Переменные загружаются из `config/.env` библиотекой `src/lib/env.os`. Безопасные примеры значений хранятся в `config/.env.example`.
 
+## Загрузка BSP
+
+### `BSP_CFE_ARCHIVE_URL`
+
+URL ZIP-архива BSP, из которого пользовательский скрипт `scripts/download_cfe_bsp.os` извлекает файл `.cfe`. Результат сохраняется в `.temp/bsp.cfe` относительно корня проекта.
+
 ## Платформа и исходники 1С
 
 ### `ONE_C_PLATFORM_VERSION`
