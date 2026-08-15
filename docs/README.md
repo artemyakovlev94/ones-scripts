@@ -31,3 +31,4 @@
 
 - [`scripts/download_cfe_bsp.os`](scripts/download_cfe_bsp.md) — пользовательская точка входа для загрузки CFE BSP.
 - [`scripts/create_or_update_database.os`](scripts/create_or_update_database.md) — пользовательская точка входа для создания, обновления и запуска базы worktree.
+- [`scripts/create_or_update_database_from_template.os`](scripts/create_or_update_database_from_template.md) — создание или обновление базы worktree из файла существующей базы.

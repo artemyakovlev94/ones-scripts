@@ -22,3 +22,4 @@
 |---|---|---|
 | `scripts/download_cfe_bsp.os` | Скачать расширение БСП из ZIP-архива | [Скачивание CFE БСП](download_cfe_bsp.md) |
 | `scripts/create_or_update_database.os` | Создать или обновить базу worktree и запустить клиент | [Создание или обновление базы данных 1С](create_or_update_database.md) |
+| `scripts/create_or_update_database_from_template.os` | Создать базу worktree копированием существующей базы и обновить её | [Создание или обновление базы из существующей базы](create_or_update_database_from_template.md) |
