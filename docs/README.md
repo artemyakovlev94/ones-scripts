@@ -40,5 +40,6 @@
 - [`scripts/create_or_update_database.os`](scripts/create_or_update_database.md) — пользовательская точка входа для создания, обновления и запуска базы worktree.
 - [`scripts/create_or_update_database_from_template.os`](scripts/create_or_update_database_from_template.md) — создание или обновление базы worktree из файла существующей базы.
 - [`scripts/load_test_extension.os`](scripts/load_test_extension.md) — сборка и загрузка тестового расширения в существующую базу.
+- [`scripts/load_configuration.os`](scripts/load_configuration.md) — загрузка исходников основной конфигурации в существующую базу.
 - [`scripts/copy_database_to_template.os`](scripts/copy_database_to_template.md) — сохранение существующей файловой базы как шаблона.
 - [`scripts/delete_database_directory.os`](scripts/delete_database_directory.md) — безвозвратное удаление каталога файловой базы.
