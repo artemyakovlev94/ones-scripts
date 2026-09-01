@@ -8,6 +8,7 @@
 
 ```dotenv
 BSP_CFE_ARCHIVE_URL=https://example.com/archive.zip
+DB_DT_ARCHIVE_URL=https://example.com/database.zip
 
 ONE_C_PLATFORM_VERSION=8.3.27.1916
 ONE_C_PLATFORM_BITNESS=x64
@@ -26,20 +27,21 @@ WORKTREE_PATH_CFE_TEST=src\tests
 
 ## Применимость
 
-| Переменная | BSP | Создание/обновление базы | База из шаблона | Тестовое расширение | Копирование в шаблон | Удаление базы |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| `BSP_CFE_ARCHIVE_URL` | ✓ | — | — | — | — | — |
-| `ONE_C_PLATFORM_VERSION` | — | ✓ | ✓ | ✓ | — | — |
-| `ONE_C_PLATFORM_BITNESS` | — | ✓ | ✓ | ✓ | — | — |
-| `SHOW_COMMAND_WINDOWS` | — | ✓ | ✓ | ✓ | — | — |
-| `PLAY_COMPLETION_SOUND` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| `ONE_C_BASES_PATH` | — | условно | условно | условно | — | — |
-| `ONE_C_BASES_TEMPLATE` | — | — | ✓ | — | ✓ | — |
-| `ONE_C_IBASES_FOLDER` | — | ✓ | ✓ | — | — | ✓ |
-| `ONE_C_INFOBASE_USER` | — | для существующей базы | ✓ | ✓ | — | — |
-| `ONE_C_INFOBASE_PASSWORD` | — | для существующей базы | при необходимости | при необходимости | — | — |
-| `WORKTREE_PATH_CF` | — | ✓ | ✓ | — | — | — |
-| `WORKTREE_PATH_CFE_TEST` | — | ✓ | ✓ | ✓ | — | — |
+| Переменная | BSP | Выгрузка DT | Создание/обновление базы | База из шаблона | Тестовое расширение | Копирование в шаблон | Удаление базы |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| `BSP_CFE_ARCHIVE_URL` | ✓ | — | — | — | — | — | — |
+| `DB_DT_ARCHIVE_URL` | — | ✓ | — | — | — | — | — |
+| `ONE_C_PLATFORM_VERSION` | — | — | ✓ | ✓ | ✓ | — | — |
+| `ONE_C_PLATFORM_BITNESS` | — | — | ✓ | ✓ | ✓ | — | — |
+| `SHOW_COMMAND_WINDOWS` | — | — | ✓ | ✓ | ✓ | — | — |
+| `PLAY_COMPLETION_SOUND` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `ONE_C_BASES_PATH` | — | — | условно | условно | условно | — | — |
+| `ONE_C_BASES_TEMPLATE` | — | — | — | ✓ | — | ✓ | — |
+| `ONE_C_IBASES_FOLDER` | — | — | ✓ | ✓ | — | — | ✓ |
+| `ONE_C_INFOBASE_USER` | — | — | для существующей базы | ✓ | ✓ | — | — |
+| `ONE_C_INFOBASE_PASSWORD` | — | — | для существующей базы | при необходимости | при необходимости | — | — |
+| `WORKTREE_PATH_CF` | — | — | ✓ | ✓ | — | — | — |
+| `WORKTREE_PATH_CFE_TEST` | — | — | ✓ | ✓ | ✓ | — | — |
 
 «Условно» означает, что переменная требуется только при отсутствии входного параметра `--db-path`.
 
@@ -48,6 +50,10 @@ WORKTREE_PATH_CFE_TEST=src\tests
 ### `BSP_CFE_ARCHIVE_URL`
 
 Прямой URL ZIP-архива БСП для `scripts/download_cfe_bsp.os`. Архив должен содержать ровно один файл `.cfe`.
+
+### `DB_DT_ARCHIVE_URL`
+
+Прямой URL ZIP-архива выгрузки базы для `scripts/download_database_dt.os`. Архив должен содержать ровно один файл `.dt`; результат сохраняется как `.temp/database.dt`.
 
 ### `ONE_C_PLATFORM_VERSION`
 
