@@ -6,7 +6,7 @@
 
 - Windows;
 - OneScript с доступной командой `oscript`;
-- Vanessa Automation с доступной командой `vrunner`;
+- Vanessa Runner 3.x с доступной командой `vrunner`;
 - установленная платформа 1С требуемой версии и разрядности;
 - `ibcmd.exe` соответствующей платформы;
 - существующий файл `1Cv8.1CD` в каталоге базы;
@@ -28,10 +28,10 @@ PLAY_COMPLETION_SOUND=false
 ONE_C_BASES_PATH=D:\db
 ONE_C_INFOBASE_USER=Administrator
 ONE_C_INFOBASE_PASSWORD=
-WORKTREE_PATH_CF=src\cf
+REPOSITORY_PATH_CF=src\cf
 ```
 
-`WORKTREE_PATH_CF` задаётся относительно `--worktree-path`. `ONE_C_BASES_PATH` используется только при отсутствии `--db-path`.
+`REPOSITORY_PATH_CF` задаётся относительно `--repo-path`. `ONE_C_BASES_PATH` используется только при отсутствии `--db-path`.
 
 ## Как запустить
 
@@ -39,8 +39,8 @@ WORKTREE_PATH_CF=src\cf
 
 ```powershell
 oscript scripts\load_configuration.os `
-  --worktree-name "DEV-12345" `
-  --worktree-path "D:\git\DEV-12345" `
+  --branch-name "DEV-12345" `
+  --repo-path "E:\git\TB" `
   --db-path "D:\db\DEV-12345"
 ```
 
@@ -48,8 +48,8 @@ oscript scripts\load_configuration.os `
 
 ```powershell
 oscript scripts\load_configuration.os `
-  --worktree-name "DEV-12345" `
-  --worktree-path "D:\git\DEV-12345"
+  --branch-name "DEV-12345" `
+  --repo-path "E:\git\TB"
 ```
 
 ## Что делает скрипт
@@ -57,12 +57,16 @@ oscript scripts\load_configuration.os `
 1. Проверяет обязательные параметры и настройки.
 2. Проверяет наличие `<db-path>\1Cv8.1CD` и каталога исходников конфигурации.
 3. Импортирует исходники через `ibcmd infobase config import` с авторизацией из окружения.
-4. Обновляет конфигурацию базы данных через `vrunner updatedb --ibcmd`.
+4. Обновляет конфигурацию базы данных через `vrunner infobase update --ibcmd`.
 
 Скрипт не создаёт базу, не загружает расширения, не изменяет `ibases.v8i` и не запускает клиент 1С.
 
 ## Результат
 
-Основная конфигурация указанной существующей базы обновлена из исходников worktree. Постоянные файлы вне базы не создаются.
+Основная конфигурация указанной существующей базы обновлена из исходников ветки. Постоянные файлы вне базы не создаются.
 
 [Вернуться к оглавлению](README.md)
+
+Репозиторий определяется через Git из текущего каталога запуска (включая его подкаталоги). `--repo-path` задаёт другой каталог репозитория. Имя задачи берётся из текущей Git-ветки; `--branch-name` переопределяет имя базы и папки, не переключая ветку. Для detached HEAD и веток со специальными символами, например `feature/DEV-12345`, передайте `--branch-name DEV-12345`. Требуется Git в PATH. Старые параметры `--worktree-name` и `--worktree-path` заменены новыми.
+
+Настройки путей: `REPOSITORY_PATH_CF` и `REPOSITORY_PATH_CFE_TEST` относительно корня репозитория. Пока новые значения не заданы, используются прежние `WORKTREE_PATH_CF` и `WORKTREE_PATH_CFE_TEST`. Рабочий `config/.env` пользователь обновляет самостоятельно.

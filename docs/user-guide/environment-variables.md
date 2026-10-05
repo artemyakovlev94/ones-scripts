@@ -19,8 +19,8 @@ ONE_C_BASES_TEMPLATE=D:\db\templatedb
 ONE_C_IBASES_FOLDER=DEV
 ONE_C_INFOBASE_USER=Administrator
 ONE_C_INFOBASE_PASSWORD=
-WORKTREE_PATH_CF=src\cf
-WORKTREE_PATH_CFE_TEST=src\tests
+REPOSITORY_PATH_CF=src\cf
+REPOSITORY_PATH_CFE_TEST=src\tests
 ```
 
 Не каждому скрипту нужны все переменные. Если параметр `--db-path` передан явно, значение `ONE_C_BASES_PATH` для определения базы не используется.
@@ -40,8 +40,8 @@ WORKTREE_PATH_CFE_TEST=src\tests
 | `ONE_C_IBASES_FOLDER` | — | — | ✓ | ✓ | — | — | ✓ |
 | `ONE_C_INFOBASE_USER` | — | — | для существующей базы | ✓ | ✓ | — | — |
 | `ONE_C_INFOBASE_PASSWORD` | — | — | для существующей базы | при необходимости | при необходимости | — | — |
-| `WORKTREE_PATH_CF` | — | — | ✓ | ✓ | — | — | — |
-| `WORKTREE_PATH_CFE_TEST` | — | — | ✓ | ✓ | ✓ | — | — |
+| `REPOSITORY_PATH_CF` | — | — | ✓ | ✓ | — | — | — |
+| `REPOSITORY_PATH_CFE_TEST` | — | — | ✓ | ✓ | ✓ | — | — |
 
 «Условно» означает, что переменная требуется только при отсутствии входного параметра `--db-path`.
 
@@ -97,7 +97,7 @@ ONE_C_PLATFORM_VERSION=8.3.27.1916
 Корневой каталог баз 1С. Если `--db-path` не передан, путь к базе вычисляется как:
 
 ```text
-ONE_C_BASES_PATH\<worktree-name>
+ONE_C_BASES_PATH\<branch-name>
 ```
 
 Используйте абсолютный путь, например `D:\db`.
@@ -130,27 +130,31 @@ ONE_C_INFOBASE_PASSWORD=
 
 Не указывайте рабочий пароль в `config/.env.example`.
 
-### `WORKTREE_PATH_CF`
+### `REPOSITORY_PATH_CF`
 
-Путь к исходникам основной конфигурации относительно `--worktree-path`.
+Путь к исходникам основной конфигурации относительно `--repo-path`.
 
 Например, при:
 
 ```dotenv
-WORKTREE_PATH_CF=src\cf
+REPOSITORY_PATH_CF=src\cf
 ```
 
-и `--worktree-path "D:\git\DEV-12345"` исходники ищутся в `D:\git\DEV-12345\src\cf`.
+и `--repo-path "E:\git\TB"` исходники ищутся в `E:\git\TB\src\cf`.
 
-### `WORKTREE_PATH_CFE_TEST`
+### `REPOSITORY_PATH_CFE_TEST`
 
-Путь к исходникам тестового расширения относительно `--worktree-path`. В каталоге должен находиться `Configuration.xml`, из которого скрипт получает имя расширения.
+Путь к исходникам тестового расширения относительно `--repo-path`. В каталоге должен находиться `Configuration.xml`, из которого скрипт получает имя расширения.
 
 ## Диагностика
 
 - Ошибка о незаданной переменной означает, что она отсутствует в `config/.env` или имеет пустое значение.
 - Если платформа или `ibcmd.exe` не найдены, проверьте одновременно `ONE_C_PLATFORM_VERSION` и `ONE_C_PLATFORM_BITNESS`.
-- Если база не найдена, проверьте `--db-path` либо сочетание `ONE_C_BASES_PATH` и `--worktree-name`.
+- Если база не найдена, проверьте `--db-path` либо сочетание `ONE_C_BASES_PATH` и `--branch-name`.
 - Если шаблон не найден, проверьте наличие файла `1Cv8.1CD` непосредственно в `ONE_C_BASES_TEMPLATE`.
 
 [Вернуться к оглавлению](README.md)
+
+Репозиторий определяется через Git из текущего каталога запуска (включая его подкаталоги). `--repo-path` задаёт другой каталог репозитория. Имя задачи берётся из текущей Git-ветки; `--branch-name` переопределяет имя базы и папки, не переключая ветку. Для detached HEAD и веток со специальными символами, например `feature/DEV-12345`, передайте `--branch-name DEV-12345`. Требуется Git в PATH. Старые параметры `--worktree-name` и `--worktree-path` заменены новыми.
+
+Настройки путей: `REPOSITORY_PATH_CF` и `REPOSITORY_PATH_CFE_TEST` относительно корня репозитория. Пока новые значения не заданы, используются прежние `WORKTREE_PATH_CF` и `WORKTREE_PATH_CFE_TEST`. Рабочий `config/.env` пользователь обновляет самостоятельно.

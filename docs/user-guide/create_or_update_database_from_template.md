@@ -6,10 +6,10 @@
 
 - Windows;
 - OneScript с доступной командой `oscript`;
-- Vanessa Automation с доступной командой `vrunner`;
+- Vanessa Runner 3.x с доступной командой `vrunner`;
 - платформа 1С версии и разрядности из `ONE_C_PLATFORM_VERSION` и `ONE_C_PLATFORM_BITNESS`;
 - `ibcmd.exe` соответствующей платформы;
-- права на чтение исходной базы и исходников worktree;
+- права на чтение исходной базы и исходников ветки;
 - права на запись в каталог целевой базы, корневую `.temp` и `%APPDATA%\1C\1CEStart\ibases.v8i`.
 
 ## Зависимости
@@ -33,8 +33,8 @@ ONE_C_BASES_TEMPLATE=D:\db\templatedb
 
 ```powershell
 oscript scripts\create_or_update_database_from_template.os `
-  --worktree-name "DEV-12345" `
-  --worktree-path "D:\git\DEV-12345" `
+  --branch-name "DEV-12345" `
+  --repo-path "E:\git\TB" `
   --extension-name "ТБ_БСП" `
   --extension-path "D:\tools\bsp.cfe"
 ```
@@ -44,7 +44,7 @@ oscript scripts\create_or_update_database_from_template.os `
 ## Что делает скрипт
 
 1. Проверяет `ONE_C_BASES_TEMPLATE` и наличие `1Cv8.1CD` в указанном каталоге.
-2. Определяет целевой путь из `--db-path` либо как `ONE_C_BASES_PATH\ИмяWorktree`.
+2. Определяет целевой путь из `--db-path` либо как `ONE_C_BASES_PATH\ИмяВетки`.
 3. Если целевого `1Cv8.1CD` нет, создаёт каталог назначения и копирует файл исходной базы.
 4. Регистрирует базу в `ibases.v8i` по тем же правилам, что основной скрипт.
 5. Загружает исходники основной конфигурации через `ibcmd` как в существующую базу.
@@ -58,3 +58,7 @@ oscript scripts\create_or_update_database_from_template.os `
 В целевом каталоге находится обновлённая копия исходной базы, база зарегистрирована в списке 1С, временное тестовое расширение удалено, клиент 1С запущен.
 
 [Вернуться к оглавлению](README.md)
+
+Репозиторий определяется через Git из текущего каталога запуска (включая его подкаталоги). `--repo-path` задаёт другой каталог репозитория. Имя задачи берётся из текущей Git-ветки; `--branch-name` переопределяет имя базы и папки, не переключая ветку. Для detached HEAD и веток со специальными символами, например `feature/DEV-12345`, передайте `--branch-name DEV-12345`. Требуется Git в PATH. Старые параметры `--worktree-name` и `--worktree-path` заменены новыми.
+
+Настройки путей: `REPOSITORY_PATH_CF` и `REPOSITORY_PATH_CFE_TEST` относительно корня репозитория. Пока новые значения не заданы, используются прежние `WORKTREE_PATH_CF` и `WORKTREE_PATH_CFE_TEST`. Рабочий `config/.env` пользователь обновляет самостоятельно.

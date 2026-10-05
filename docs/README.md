@@ -31,7 +31,7 @@
 
 - [`src/workflows/download_cfe_bsp.os`](src/workflows/download_cfe_bsp.md) — скачивание и сохранение CFE BSP.
 - [`src/workflows/download_database_dt.os`](src/workflows/download_database_dt.md) — скачивание и сохранение выгрузки базы данных.
-- [`src/workflows/create_or_update_database.os`](src/workflows/create_or_update_database.md) — создание или обновление файловой базы worktree.
+- [`src/workflows/create_or_update_database.os`](src/workflows/create_or_update_database.md) — создание или обновление файловой базы ветки.
 - [`src/workflows/copy_database_to_template.os`](src/workflows/copy_database_to_template.md) — копирование существующей файловой базы в шаблон.
 - [`src/workflows/delete_database_directory.os`](src/workflows/delete_database_directory.md) — безопасная проверка и удаление каталога файловой базы.
 
@@ -39,9 +39,14 @@
 
 - [`scripts/download_cfe_bsp.os`](scripts/download_cfe_bsp.md) — пользовательская точка входа для загрузки CFE BSP.
 - [`scripts/download_database_dt.os`](scripts/download_database_dt.md) — пользовательская точка входа для загрузки выгрузки базы данных.
-- [`scripts/create_or_update_database.os`](scripts/create_or_update_database.md) — пользовательская точка входа для создания, обновления и запуска базы worktree.
-- [`scripts/create_or_update_database_from_template.os`](scripts/create_or_update_database_from_template.md) — создание или обновление базы worktree из файла существующей базы.
+- [`scripts/create_or_update_database.os`](scripts/create_or_update_database.md) — пользовательская точка входа для создания, обновления и запуска базы ветки.
+- [`scripts/create_or_update_database_from_template.os`](scripts/create_or_update_database_from_template.md) — создание или обновление базы ветки из файла существующей базы.
 - [`scripts/load_test_extension.os`](scripts/load_test_extension.md) — прямая загрузка тестового расширения из исходников в существующую базу.
 - [`scripts/load_configuration.os`](scripts/load_configuration.md) — загрузка исходников основной конфигурации в существующую базу.
 - [`scripts/copy_database_to_template.os`](scripts/copy_database_to_template.md) — сохранение существующей файловой базы как шаблона.
 - [`scripts/delete_database_directory.os`](scripts/delete_database_directory.md) — безвозвратное удаление каталога файловой базы.
+
+Для операций с 1С требуется Vanessa Runner 3.x и OneScript 2.0 или новее. Проверка установки: `oscript -version` и `vrunner --version`. Команды Runner 2.x больше не поддерживаются. Runner 3.x не предоставляет параметр `--bitness`: разрядность для его команд выбирает сам Runner. `ONE_C_PLATFORM_BITNESS` продолжает задавать порядок поиска платформы для прямых вызовов `ibcmd`.
+
+- [src/lib/git.os](src/lib/git.md) — определение корня репозитория и текущей ветки.
+- [src/workflows/repository_context.os](src/workflows/repository_context.md) — определение репозитория и имени задачи.

@@ -28,9 +28,11 @@
 |---|---|---|
 | `scripts/download_cfe_bsp.os` | Скачать расширение БСП из ZIP-архива | [Скачивание CFE БСП](download_cfe_bsp.md) |
 | `scripts/download_database_dt.os` | Скачать выгрузку базы данных из ZIP-архива | [Скачивание выгрузки базы данных](download_database_dt.md) |
-| `scripts/create_or_update_database.os` | Создать или обновить базу worktree и запустить клиент | [Создание или обновление базы данных 1С](create_or_update_database.md) |
-| `scripts/create_or_update_database_from_template.os` | Создать базу worktree копированием существующей базы и обновить её | [Создание или обновление базы из существующей базы](create_or_update_database_from_template.md) |
+| `scripts/create_or_update_database.os` | Создать или обновить базу ветки и запустить клиент | [Создание или обновление базы данных 1С](create_or_update_database.md) |
+| `scripts/create_or_update_database_from_template.os` | Создать базу ветки копированием существующей базы и обновить её | [Создание или обновление базы из существующей базы](create_or_update_database_from_template.md) |
 | `scripts/load_test_extension.os` | Загрузить тестовое расширение в существующую базу | [Загрузка тестового расширения](load_test_extension.md) |
 | `scripts/load_configuration.os` | Загрузить исходники основной конфигурации в существующую базу | [Загрузка исходников конфигурации](load_configuration.md) |
 | `scripts/copy_database_to_template.os` | Скопировать существующую базу в каталог шаблона | [Копирование базы в шаблон](copy_database_to_template.md) |
 | `scripts/delete_database_directory.os` | Безвозвратно удалить каталог файловой базы | [Удаление каталога базы данных](delete_database_directory.md) |
+
+Для работы с базами запустите скрипт из репозитория исходников 1С: текущая Git-ветка определяет базу, каталог репозитория определяет исходники. Переопределение: --repo-path и --branch-name.
